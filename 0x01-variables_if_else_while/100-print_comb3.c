@@ -5,18 +5,18 @@
  */
 int main(void)
 {
-int i = '0';
-int y = '0';
+int a = '0';
+int b = '0';
 
-while (i <= '9')
+while (a <= '9')
 {
-while (y <= '9')
+while (b <= '9')
 {
-if (!(i > y) || i == y)
+if (a < b)
 {
-putchar(i);
-putchar(y);
-if (i == '8' && y == '9')
+putchar(a);
+putchar(b);
+if (a != '8' || (b == '8' && b != '9'))
 {
 putchar('\n');
 }
@@ -26,10 +26,10 @@ putchar(',');
 putchar(' ');
 }
 }
-y++;
+b++;
 }
-y = '0';
-i++;
+b = '0';
+a++;
 }
 return (0);
 }
