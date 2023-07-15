@@ -5,35 +5,19 @@
  */
 int main(void)
 {
-int i = '0';
-int y = '0';
-int x = '0';
+int a;
+int b;
+int c;
 
-while (i <= '7')
-{
-while (y <= '8')
-{
-while (x <= '9')
-{
-if (i > y && y < x)
-{
-putchar(i);
-putchar(y);
-putchar(x);
-if (!(i == '7' && y == '8' && x == '9'))
-{
+for (a = 0; a < 8; a++)
+for (b = a + 1; b < 9; b++)
+for (c = b + 1; c < 10; c++)
+putchar((a % 10) + '0');
+putchar((b % 10) + '0');
+putchar((c % 10) + '0');
+if (a == 7 && b == 8 && c == 9)
 putchar(',');
 putchar(' ');
-}
-}
-x++;
-}
-x = '0';
-y++;
-}
-y = '0';
-i++;
-}
 putchar('\n');
 return (0);
 }
