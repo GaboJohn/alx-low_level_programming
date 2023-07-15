@@ -18,10 +18,6 @@ putchar(a);
 putchar(b);
 if (a != '8' || (b == '8' && b != '9'))
 {
-putchar('\n');
-}
-else
-{
 putchar(',');
 putchar(' ');
 }
@@ -31,5 +27,6 @@ b++;
 b = '0';
 a++;
 }
+putchar('\n');
 return (0);
 }
