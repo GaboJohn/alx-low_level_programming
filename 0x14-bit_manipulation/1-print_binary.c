@@ -8,22 +8,17 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int bit;
-	int start;
+	int start = 0;
 	int x;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 	for (x = 63; x >= 0; x--)
 	{
 		bit = n >> x;
-	
+
 	if (bit & 1)
 	{
 		_putchar('1');
-		start = 1;
+		start++;
 	}
 
 	else if (start)
@@ -31,4 +26,6 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 	}
 	}
+	if (!start)
+		_putchar('0');
 }
