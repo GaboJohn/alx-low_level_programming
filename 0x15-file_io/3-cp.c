@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * print_error - handles errors
  * @file_to: file to copy
@@ -21,7 +20,6 @@ void print_error(int file_from, int file_to, char *argv[])
 	exit(99);
 	}
 }
-
 /**
  * main - copy from one file to another
  * @argc: arg count
@@ -41,22 +39,17 @@ if (argc != 3)
 }
 file_from = open(argv[1], O_RDONLY);
 file_to = open(argv[2],  O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
 print_error(file_from, file_to, argv);
-
 written = 1024;
 while (written == 1024)
 {
 	written = read(file_from, buff, 1024);
 	if (written == -1)
 		print_error(-1, 0, argv);
-
 	result = write(file_to, buff, written);
-
 	if (result == -1)
 	print_error(0, -1, argv);
 }
-
 err_close = close(file_from);
 if (err_close == -1)
 {
@@ -69,6 +62,5 @@ if (err_close == -1)
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
 	exit(100);
 }
-
 return (0);
 }
