@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fclose(file);
 		return (0);
 	}
-	x = fread(buffer,sizeof(char), letters, file);
+	x = fread(buffer, sizeof(char), letters, file);
 	if (x == -1)
 	{
 		free(buffer);
